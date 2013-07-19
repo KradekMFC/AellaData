@@ -20,8 +20,6 @@
             Grouped
             <asp:GridView runat="server" ID="CamscoresGrouped" EnableViewState="false" />
         </div>
-        
-        
     </div>
     </form>
 </body>

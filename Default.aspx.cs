@@ -20,7 +20,15 @@ namespace AellaData
                 processed = true;
             };
 
-            while (!processed) { };
+            var now = DateTime.Now;
+            var timeout = now.AddSeconds(30);
+            while (!processed && DateTime.Now < timeout) { };
+
+            if (!processed)
+            {
+                Response.Write("Timed out");
+                Response.End();
+            }
 
             var rawList = client.Users.ToList();
 
